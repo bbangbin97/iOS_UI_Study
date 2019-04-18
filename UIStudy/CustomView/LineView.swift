@@ -34,7 +34,7 @@ class LineView : UIView {
         aPath.move(to: CGPoint(x:0, y:0))
         
         aPath.addLine(to: CGPoint(x:self.bounds.width, y:0))
-        aPath.lineWidth = 2
+        aPath.lineWidth = 3
         
         //Keep using the method addLineToPoint until you get to the one where about to close the path
         

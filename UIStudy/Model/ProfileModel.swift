@@ -7,7 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileModel {
     
+    let profileImage : UIImage
+    let profileName : String
+    let profileBirth: String
+    
+    init() {
+        profileImage = UIImage(named: "imageforTest")!
+        profileName = "정영빈 (남)"
+        profileBirth = "양력 1997.01.21 소띠 물병자리"
+    }
 }

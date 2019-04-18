@@ -10,6 +10,8 @@
 		E20226922264EE520047D8DA /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20226912264EE520047D8DA /* ProfileView.xib */; };
 		E20226942264EE6C0047D8DA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20226932264EE6C0047D8DA /* ProfileView.swift */; };
 		E20226972264F1E60047D8DA /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20226962264F1E60047D8DA /* ProfileModel.swift */; };
+		E252F3AA2268584900F75002 /* UnsaeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E252F3A82268584900F75002 /* UnsaeCell.swift */; };
+		E252F3AB2268584900F75002 /* UnsaeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E252F3A92268584900F75002 /* UnsaeCell.xib */; };
 		E26804F3226620AF001F83F7 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26804F2226620AF001F83F7 /* ImageViewExtension.swift */; };
 		E26A5D85226468A000B858BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A5D84226468A000B858BB /* AppDelegate.swift */; };
 		E26A5D87226468A000B858BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26A5D86226468A000B858BB /* ViewController.swift */; };
@@ -19,6 +21,9 @@
 		E29180A022664704002AA002 /* LineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E291809F22664704002AA002 /* LineView.xib */; };
 		E29180A22266470F002AA002 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29180A12266470F002AA002 /* LineView.swift */; };
 		E29180A422664A99002AA002 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29180A322664A99002AA002 /* ColorExtension.swift */; };
+		E29CF3C5226752C7004ADC18 /* TodayUnsaeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CF3C4226752C7004ADC18 /* TodayUnsaeViewModel.swift */; };
+		E29CF3C72267538B004ADC18 /* UnsaeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CF3C62267538B004ADC18 /* UnsaeModel.swift */; };
+		E29CF3CA226755B0004ADC18 /* ModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29CF3C9226755B0004ADC18 /* ModelCreator.swift */; };
 		F7810C8C00BCE212CCF428D5 /* Pods_UIStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96A9833A285259DBE03DDAD /* Pods_UIStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +34,8 @@
 		E20226912264EE520047D8DA /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		E20226932264EE6C0047D8DA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E20226962264F1E60047D8DA /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		E252F3A82268584900F75002 /* UnsaeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaeCell.swift; sourceTree = "<group>"; };
+		E252F3A92268584900F75002 /* UnsaeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnsaeCell.xib; sourceTree = "<group>"; };
 		E26804F2226620AF001F83F7 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		E26A5D81226468A000B858BB /* UIStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26A5D84226468A000B858BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +47,10 @@
 		E291809F22664704002AA002 /* LineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineView.xib; sourceTree = "<group>"; };
 		E29180A12266470F002AA002 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		E29180A322664A99002AA002 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		E29CF3C2226711C4004ADC18 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E29CF3C4226752C7004ADC18 /* TodayUnsaeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayUnsaeViewModel.swift; sourceTree = "<group>"; };
+		E29CF3C62267538B004ADC18 /* UnsaeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaeModel.swift; sourceTree = "<group>"; };
+		E29CF3C9226755B0004ADC18 /* ModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,17 +86,18 @@
 			isa = PBXGroup;
 			children = (
 				E20226962264F1E60047D8DA /* ProfileModel.swift */,
+				E29CF3C62267538B004ADC18 /* UnsaeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E26804F122662099001F83F7 /* extension */ = {
+		E26804F122662099001F83F7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				E26804F2226620AF001F83F7 /* ImageViewExtension.swift */,
 				E29180A322664A99002AA002 /* ColorExtension.swift */,
 			);
-			path = extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E26A5D78226468A000B858BB = {
@@ -109,14 +121,33 @@
 		E26A5D83226468A000B858BB /* UIStudy */ = {
 			isa = PBXGroup;
 			children = (
-				E26804F122662099001F83F7 /* extension */,
-				E20226952264F1C20047D8DA /* Model */,
-				E2EF67F02264A09D00D9B06B /* View */,
-				E2EF67EF2264A09300D9B06B /* CustomView */,
-				E26A5D84226468A000B858BB /* AppDelegate.swift */,
 				E26A5D90226468A100B858BB /* Info.plist */,
+				E20226952264F1C20047D8DA /* Model */,
+				E29CF3C822675556004ADC18 /* ModelCreator */,
+				E29CF3C3226752AC004ADC18 /* ViewModel */,
+				E26A5D84226468A000B858BB /* AppDelegate.swift */,
+				E2EF67EF2264A09300D9B06B /* CustomView */,
+				E26804F122662099001F83F7 /* Extension */,
+				E29CF3C2226711C4004ADC18 /* MyPlayground.playground */,
+				E2EF67F02264A09D00D9B06B /* View */,
 			);
 			path = UIStudy;
+			sourceTree = "<group>";
+		};
+		E29CF3C3226752AC004ADC18 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E29CF3C4226752C7004ADC18 /* TodayUnsaeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E29CF3C822675556004ADC18 /* ModelCreator */ = {
+			isa = PBXGroup;
+			children = (
+				E29CF3C9226755B0004ADC18 /* ModelCreator.swift */,
+			);
+			path = ModelCreator;
 			sourceTree = "<group>";
 		};
 		E2EF67EF2264A09300D9B06B /* CustomView */ = {
@@ -126,6 +157,8 @@
 				E20226932264EE6C0047D8DA /* ProfileView.swift */,
 				E291809F22664704002AA002 /* LineView.xib */,
 				E29180A12266470F002AA002 /* LineView.swift */,
+				E252F3A82268584900F75002 /* UnsaeCell.swift */,
+				E252F3A92268584900F75002 /* UnsaeCell.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -201,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E252F3AB2268584900F75002 /* UnsaeCell.xib in Resources */,
 				E29180A022664704002AA002 /* LineView.xib in Resources */,
 				E26A5D8F226468A100B858BB /* LaunchScreen.storyboard in Resources */,
 				E20226922264EE520047D8DA /* ProfileView.xib in Resources */,
@@ -243,16 +277,22 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UIStudy/Pods-UIStudy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/GaugeKit/GaugeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GaugeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,10 +308,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26804F3226620AF001F83F7 /* ImageViewExtension.swift in Sources */,
+				E29CF3C72267538B004ADC18 /* UnsaeModel.swift in Sources */,
 				E26A5D87226468A000B858BB /* ViewController.swift in Sources */,
 				E29180A422664A99002AA002 /* ColorExtension.swift in Sources */,
 				E29180A22266470F002AA002 /* LineView.swift in Sources */,
+				E252F3AA2268584900F75002 /* UnsaeCell.swift in Sources */,
+				E29CF3CA226755B0004ADC18 /* ModelCreator.swift in Sources */,
 				E20226942264EE6C0047D8DA /* ProfileView.swift in Sources */,
+				E29CF3C5226752C7004ADC18 /* TodayUnsaeViewModel.swift in Sources */,
 				E26A5D85226468A000B858BB /* AppDelegate.swift in Sources */,
 				E20226972264F1E60047D8DA /* ProfileModel.swift in Sources */,
 			);
