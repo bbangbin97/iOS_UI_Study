@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var gaugeView: Gauge!
     
+    @IBOutlet weak var luckOfColor: UIView!
+    @IBOutlet weak var numOfLuck: UILabel!
+    @IBOutlet weak var directionOfLuck: UILabel!
+    @IBOutlet weak var unsaeScoreLabel: UILabel!
     @IBOutlet weak var unsaeTableView: UITableView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var unsaeMainLabel: UILabel!
@@ -27,6 +31,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var scrollContentView: UIView!
     @IBOutlet weak var chongUnLabel: UILabel!
     @IBOutlet weak var radarChartView: RadarChartView!
+    
+    @IBOutlet weak var colorImageView1: UIImageView!
+    @IBOutlet weak var colorImageView2: UIImageView!
+    @IBOutlet weak var colorImageView3: UIImageView!
+    
     
     private let unsaeCellFileName = "UnsaeCell"
     private let unsaeCellIdentifier = "unsaeCell"
@@ -42,28 +51,46 @@ class ViewController: UIViewController {
         unsaeViewBindUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
-        profileView.profileImageView.toCircleImage()
-        gaugeViewAnimation()
-        
-        scrollContentView.frame = CGRect(x: 0, y: 0, width: scrollContentView.frame.width, height: getHeight())
-        print("getHeight\(getHeight())")
-        print(scrollContentView.frame.height)
-        print("table \(unsaeTableView.frame.height)")
+        viewInit()
+        scoreAnimate()
     }
     
-    private func gaugeViewAnimation(){
-        
-        //        let randnum = Int.random(in: 50..<100)
-        //
-        //        let timer = Observable<Int>.timer(0,period: 0.05,scheduler: MainScheduler.instance)
-        
+    private func setLuckOfColor() {
         
     }
+    
+    private func scoreAnimate(){
+        _ = todayUnsae.unsaeScore
+            .map{"\($0)"}
+            .bind(to: unsaeScoreLabel.rx.text)
+        
+        _ = todayUnsae.unsaeScore.subscribe(onNext:{ gaugeValue in
+            self.gaugeView.rate = CGFloat(gaugeValue)
+        })
+    } // View Animation Part
+    
+    private func viewInit(){
+        gaugeView.maxValue = 100
+        gaugeView.rate = 0
+        
+        profileView.profileImageView.toCircleImage()
+        colorImageView1.toCircleImage()
+        colorImageView2.toCircleImage()
+        colorImageView3.toCircleImage()
+        
+        luckOfColor.layer.cornerRadius = 7
+        numOfLuck.layer.cornerRadius = 7
+        directionOfLuck.layer.cornerRadius = 7
+        
+        luckOfColor.layer.borderWidth = 1.5
+        numOfLuck.layer.borderWidth = 1.5
+        directionOfLuck.layer.borderWidth = 1.5
+        luckOfColor.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
+        numOfLuck.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
+        directionOfLuck.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
+    } // View Initializer
     
     private func unsaeViewBindUI() {
         
@@ -91,7 +118,30 @@ class ViewController: UIViewController {
             .map{$0.date}
             .bind(to: dateLabel.rx.text)
         
-    }
+        _ = todayUnsae.thingOfLuckModel
+            .map{ thingOfLuckModel -> String in
+                if thingOfLuckModel.unsaeNumCount == 1 {
+                    return "\(thingOfLuckModel.unsaeNum[0])"
+                }
+                else {
+                    return "\(thingOfLuckModel.unsaeNum[0]),\(thingOfLuckModel.unsaeNum[1])"
+                }
+            }
+            .bind(to: numOfLuck.rx.text)
+        
+        _ = todayUnsae.thingOfLuckModel
+            .map{ thingOfLuckModel -> String in
+                if thingOfLuckModel.unsaeDirectionCount == 1 {
+                    return "\(thingOfLuckModel.unsaeDirection[0])"
+                }
+                else {
+                    return "\(thingOfLuckModel.unsaeDirection[0]),\(thingOfLuckModel.unsaeDirection[1])"
+                }
+            }
+            .bind(to: directionOfLuck.rx.text)
+        
+        
+    } // Bind View
     
     func getHeight() -> CGFloat {
         let height = gaugeView.frame.height + chongUnLabel.frame.height + totalLuckLabel.frame.height + radarChartView.frame.height + unsaeTableView.contentSize.height + CGFloat(75)
@@ -101,7 +151,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController { // tableView
+extension ViewController : UITableViewDelegate{ // tableView
     
     private func setupUnsaeTable() {
         
@@ -126,15 +176,13 @@ extension ViewController { // tableView
         
     }
     
-}
-
-extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-}
+    
+} // Table View
 
-extension ViewController {
+extension ViewController : IAxisValueFormatter { // ChartView
     
     private func setChart() {
         
@@ -144,10 +192,10 @@ extension ViewController {
         radarChartView.webAlpha = 1
         radarChartView.webLineWidth = 1
         radarChartView.innerWebLineWidth = 0.6
-        radarChartView.yAxis.drawLabelsEnabled = false
+        radarChartView.rotationEnabled = false
         
         let xAxis = radarChartView.xAxis
-        xAxis.labelFont = .systemFont(ofSize: 15, weight: .light)
+        xAxis.labelFont = .systemFont(ofSize: 15, weight: .bold)
         xAxis.xOffset = 0
         xAxis.yOffset = 0
         xAxis.valueFormatter = self
@@ -184,11 +232,9 @@ extension ViewController {
         radarChartView.data = data
     }
     
-    
-}
-
-extension ViewController: IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return components[Int(value) % components.count]
     }
-}
+    
+    
+} // ChartView

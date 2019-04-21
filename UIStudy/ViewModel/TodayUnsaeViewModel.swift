@@ -17,15 +17,25 @@ class TodayUnsaeViewModel {
     
     public let profileModel : Observable<ProfileModel>
     public let unsaeModel : Observable<UnsaeModel>
+    public let thingOfLuckModel : Observable<ThingOfLuckModel>
+    public let unsaeScore : Observable<Int>
+    public let unsaeColor : Observable<UIImage>
     
     init(){
         
         profileModel = ModelCreator.getProfileModel()
-        unsaeModel = ModelCreator.getUnsaeModel()
+        
+        unsaeModel = ModelCreator.getUnsaeModel().share(replay: 1)
+        
+        unsaeScore = unsaeModel
+            .flatMapLatest{Observable.timer(0, period: 0.02, scheduler: MainScheduler.instance).take($0.unsaeScore)}.share(replay: 1)
         
         dataSource = ModelCreator.getUnsaeTable()
         
- 
+        thingOfLuckModel = ModelCreator.getThingOfLuck()
+        
+        
     }
+    
     
 }

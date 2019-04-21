@@ -28,11 +28,17 @@ class ModelCreator {
         return Observable.just(unsaeModel)
     }
     
-    
+    static func getThingOfLuck() -> Observable<ThingOfLuckModel>{
+        let thingOfLuckModel = ThingOfLuckModel()
+        
+        return Observable.just(thingOfLuckModel)
+    }
     
     static func getUnsaeTable()-> Observable<[SectionOfUnsae]>{
         let unsaModel = UnsaeModel()
         
         return Observable.just([SectionOfUnsae(header: "1", items: unsaModel.unsaeData)])
     }
+    
+
 }

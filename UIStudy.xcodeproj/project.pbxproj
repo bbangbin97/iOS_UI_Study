@@ -10,6 +10,7 @@
 		E20226922264EE520047D8DA /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E20226912264EE520047D8DA /* ProfileView.xib */; };
 		E20226942264EE6C0047D8DA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20226932264EE6C0047D8DA /* ProfileView.swift */; };
 		E20226972264F1E60047D8DA /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20226962264F1E60047D8DA /* ProfileModel.swift */; };
+		E215456F226CA4DE004263B6 /* ThingOfLuckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215456E226CA4DE004263B6 /* ThingOfLuckModel.swift */; };
 		E252F3AA2268584900F75002 /* UnsaeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E252F3A82268584900F75002 /* UnsaeCell.swift */; };
 		E252F3AB2268584900F75002 /* UnsaeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E252F3A92268584900F75002 /* UnsaeCell.xib */; };
 		E26804F3226620AF001F83F7 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26804F2226620AF001F83F7 /* ImageViewExtension.swift */; };
@@ -34,6 +35,7 @@
 		E20226912264EE520047D8DA /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		E20226932264EE6C0047D8DA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E20226962264F1E60047D8DA /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		E215456E226CA4DE004263B6 /* ThingOfLuckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingOfLuckModel.swift; sourceTree = "<group>"; };
 		E252F3A82268584900F75002 /* UnsaeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaeCell.swift; sourceTree = "<group>"; };
 		E252F3A92268584900F75002 /* UnsaeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnsaeCell.xib; sourceTree = "<group>"; };
 		E26804F2226620AF001F83F7 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				E20226962264F1E60047D8DA /* ProfileModel.swift */,
 				E29CF3C62267538B004ADC18 /* UnsaeModel.swift */,
+				E215456E226CA4DE004263B6 /* ThingOfLuckModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,8 +171,8 @@
 			children = (
 				E26A5D8B226468A100B858BB /* Assets.xcassets */,
 				E26A5D86226468A000B858BB /* ViewController.swift */,
-				E26A5D8D226468A100B858BB /* LaunchScreen.storyboard */,
 				E26A5D88226468A000B858BB /* Main.storyboard */,
+				E26A5D8D226468A100B858BB /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				E20226942264EE6C0047D8DA /* ProfileView.swift in Sources */,
 				E29CF3C5226752C7004ADC18 /* TodayUnsaeViewModel.swift in Sources */,
 				E26A5D85226468A000B858BB /* AppDelegate.swift in Sources */,
+				E215456F226CA4DE004263B6 /* ThingOfLuckModel.swift in Sources */,
 				E20226972264F1E60047D8DA /* ProfileModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
