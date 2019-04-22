@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var profileView: ProfileView!
     @IBOutlet weak var gaugeView: Gauge!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var luckOfColor: UIView!
     @IBOutlet weak var numOfLuck: UILabel!
     @IBOutlet weak var directionOfLuck: UILabel!
@@ -36,16 +37,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorImageView2: UIImageView!
     @IBOutlet weak var colorImageView3: UIImageView!
     
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    
     
     private let unsaeCellFileName = "UnsaeCell"
     private let unsaeCellIdentifier = "unsaeCell"
     private let todayUnsae = TodayUnsaeViewModel()
+    
+    private var tableHeightSum : CGFloat = 0
     
     let components = ["애정운","학업운","사업운","건강운","금전운"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gaugeView.rate = 0
+
         setChart()
         setupUnsaeTable()
         unsaeViewBindUI()
@@ -57,9 +64,7 @@ class ViewController: UIViewController {
         scoreAnimate()
     }
     
-    private func setLuckOfColor() {
-        
-    }
+
     
     private func scoreAnimate(){
         _ = todayUnsae.unsaeScore
@@ -73,7 +78,6 @@ class ViewController: UIViewController {
     
     private func viewInit(){
         gaugeView.maxValue = 100
-        gaugeView.rate = 0
         
         profileView.profileImageView.toCircleImage()
         colorImageView1.toCircleImage()
@@ -90,6 +94,8 @@ class ViewController: UIViewController {
         luckOfColor.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
         numOfLuck.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
         directionOfLuck.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
+        
+        
     } // View Initializer
     
     private func unsaeViewBindUI() {
@@ -140,14 +146,29 @@ class ViewController: UIViewController {
             }
             .bind(to: directionOfLuck.rx.text)
         
+        _ = todayUnsae.thingOfLuckModel.subscribe(onNext:{
+            if $0.unsaeColor.count == 1 {
+                self.colorImageView2.layer.backgroundColor = UIColor.init(rgb: $0.unsaeColor[0]).cgColor
+                self.colorImageView2.makeShadow()
+            }
+            else if $0.unsaeColor.count == 2 {
+                self.colorImageView1.layer.backgroundColor = UIColor.init(rgb: $0.unsaeColor[0]).cgColor
+                self.colorImageView3.layer.backgroundColor = UIColor.init(rgb: $0.unsaeColor[1]).cgColor
+                self.colorImageView3.makeShadow()
+                self.colorImageView1.makeShadow()
+            }
+            else {
+                self.colorImageView1.layer.backgroundColor = UIColor.init(rgb: $0.unsaeColor[0]).cgColor
+                self.colorImageView2.layer.backgroundColor = UIColor.init(rgb: $0.unsaeColor[1]).cgColor
+                self.colorImageView3.layer.backgroundColor = UIColor.init(rgb: $0.unsaeColor[2]).cgColor
+                self.colorImageView2.makeShadow()
+                self.colorImageView1.makeShadow()
+                self.colorImageView3.makeShadow()
+            }
+        })
+        
         
     } // Bind View
-    
-    func getHeight() -> CGFloat {
-        let height = gaugeView.frame.height + chongUnLabel.frame.height + totalLuckLabel.frame.height + radarChartView.frame.height + unsaeTableView.contentSize.height + CGFloat(75)
-        
-        return height
-    }
     
 }
 

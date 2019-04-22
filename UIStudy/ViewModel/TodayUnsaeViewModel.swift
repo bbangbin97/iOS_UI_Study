@@ -19,7 +19,6 @@ class TodayUnsaeViewModel {
     public let unsaeModel : Observable<UnsaeModel>
     public let thingOfLuckModel : Observable<ThingOfLuckModel>
     public let unsaeScore : Observable<Int>
-    public let unsaeColor : Observable<UIImage>
     
     init(){
         

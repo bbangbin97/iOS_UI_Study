@@ -11,7 +11,7 @@ import UIKit
 
 class ThingOfLuckModel {
     
-    let unsaeColorSet =  [UIColor.init(rgb: 0x00ffff),UIColor.init(rgb: 0x7c2348),UIColor.init(rgb: 0x000080),UIColor.init(rgb: 0xff7f00),UIColor.init(rgb: 0xedacb1)].shuffled()
+    let unsaeColorSet =  [0x00ffff,0x7c2348, 0x000080,0xff7f00, 0xedacb1].shuffled()
     let unsaeDirectionSet = ["동","서","남","북"].shuffled()
     let unsaNumSet = Array(1..<21).shuffled()
     
@@ -21,7 +21,7 @@ class ThingOfLuckModel {
     
     var unsaeNum = [Int]()
     var unsaeDirection = [String]()
-    var unsaeColor = [UIColor]()
+    var unsaeColor = [Int]()
     
     init(){
         
