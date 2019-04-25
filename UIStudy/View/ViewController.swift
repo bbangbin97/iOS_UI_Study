@@ -44,8 +44,6 @@ class ViewController: UIViewController {
     private let unsaeCellIdentifier = "unsaeCell"
     private let todayUnsae = TodayUnsaeViewModel()
     
-    private var tableHeightSum : CGFloat = 0
-    
     let components = ["애정운","학업운","사업운","건강운","금전운"]
     
     override func viewDidLoad() {
@@ -172,12 +170,13 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController : UITableViewDelegate{ // tableView
+extension ViewController : UITableViewDelegate { // tableView
     
     private func setupUnsaeTable() {
         
         unsaeTableView.separatorStyle = .none
         unsaeTableView.isScrollEnabled = false
+        unsaeTableView.allowsSelection = false
         
         let nibName = UINib.init(nibName: unsaeCellFileName, bundle: nil)
         self.unsaeTableView.register(nibName, forCellReuseIdentifier: unsaeCellIdentifier)
@@ -195,6 +194,10 @@ extension ViewController : UITableViewDelegate{ // tableView
         _ = todayUnsae.dataSource
             .bind(to: unsaeTableView.rx.items(dataSource: dataSource))
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        tableViewHeight.constant = unsaeTableView.contentSize.height
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -237,7 +240,7 @@ extension ViewController : IAxisValueFormatter { // ChartView
         let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double.random(in: 70..<90))}
         let entries1 = (0..<cnt).map(block)
         
-        let set1 = RadarChartDataSet(entries: entries1, label: "Last Week")
+        let set1 = RadarChartDataSet(entries: entries1, label: nil)
         set1.setColor(UIColor.init(rgb: 0x9CFFFB))
         set1.fillColor = UIColor.init(rgb: 0x9CFFFB)
         set1.drawFilledEnabled = true
