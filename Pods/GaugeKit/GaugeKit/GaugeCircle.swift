@@ -37,8 +37,8 @@ extension Gauge: GaugeCircle {
         gaugeLayer.transform = CATransform3DRotate(gaugeLayer.transform, CGFloat(rotateAngle * 2 - pi_2), 0, 0, 1)
 
         if roundCap {
-            ringLayer.lineCap = CAShapeLayerLineCap.round
-            bgLayer.lineCap = CAShapeLayerLineCap.round
+            ringLayer.lineCap = kCALineCapRound
+            bgLayer.lineCap = kCALineCapRound
         }
 
         if reverse {
