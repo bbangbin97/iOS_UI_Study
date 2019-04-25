@@ -3,7 +3,6 @@ PODS:
     - Charts/Core (= 3.3.0)
   - Charts/Core (3.3.0)
   - Differentiator (3.1.0)
-  - GaugeKit (0.4.5)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxDataSources (3.1.0):
@@ -14,7 +13,6 @@ PODS:
 
 DEPENDENCIES:
   - Charts
-  - GaugeKit
   - RxCocoa (~> 4.0)
   - RxDataSources
   - RxSwift (~> 4.0)
@@ -23,7 +21,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
     - Differentiator
-    - GaugeKit
     - RxCocoa
     - RxDataSources
     - RxSwift
@@ -31,11 +28,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Charts: ec1f57f9340054155691e84d4544a1d239d382c5
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
-  GaugeKit: 7872069a8aed2d26b17fca110fe1ab59722f8a33
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 734a5c35c5a3ac4b73c4776dc14f560b03ff3aae
+PODFILE CHECKSUM: 21adbfa36aba3e0ff9c65c11634d0ec780e12ca0
 
 COCOAPODS: 1.6.1
