@@ -58,12 +58,12 @@ class ViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
+        tableViewHeight.constant = unsaeTableView.contentSize.height
         viewInit()
         scoreAnimate()
     }
     
 
-    
     private func scoreAnimate(){
         _ = todayUnsae.unsaeScore
             .map{"\($0)"}
@@ -93,6 +93,7 @@ class ViewController: UIViewController {
         numOfLuck.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
         directionOfLuck.layer.borderColor = UIColor.init(rgb: 0x009379).cgColor
         
+        scrollView.bounces = false
         
     } // View Initializer
     
@@ -194,10 +195,6 @@ extension ViewController : UITableViewDelegate { // tableView
         _ = todayUnsae.dataSource
             .bind(to: unsaeTableView.rx.items(dataSource: dataSource))
         
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        tableViewHeight.constant = unsaeTableView.contentSize.height
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
