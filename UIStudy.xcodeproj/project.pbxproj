@@ -49,10 +49,10 @@
 		E291809F22664704002AA002 /* LineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineView.xib; sourceTree = "<group>"; };
 		E29180A12266470F002AA002 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		E29180A322664A99002AA002 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		E29CF3C2226711C4004ADC18 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E29CF3C4226752C7004ADC18 /* TodayUnsaeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayUnsaeViewModel.swift; sourceTree = "<group>"; };
 		E29CF3C62267538B004ADC18 /* UnsaeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaeModel.swift; sourceTree = "<group>"; };
 		E29CF3C9226755B0004ADC18 /* ModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCreator.swift; sourceTree = "<group>"; };
+		E2FA744722781C30004B68EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,8 @@
 				E26A5D84226468A000B858BB /* AppDelegate.swift */,
 				E2EF67EF2264A09300D9B06B /* CustomView */,
 				E26804F122662099001F83F7 /* Extension */,
-				E29CF3C2226711C4004ADC18 /* MyPlayground.playground */,
 				E2EF67F02264A09D00D9B06B /* View */,
+				E2FA744722781C30004B68EB /* MyPlayground.playground */,
 			);
 			path = UIStudy;
 			sourceTree = "<group>";

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import RxDataSources
+import Charts
 
 
 struct Unsae{
@@ -41,15 +42,21 @@ class UnsaeModel {
     
     let unsaeimage = [UIImage(named: "ic_fortune_love")!,UIImage(named: "ic_fortune_study")!,UIImage(named: "ic_fortune_business")!,UIImage(named: "ic_fortune_health")!,UIImage(named: "ic_fortune_money")!]
     
+    let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double.random(in: 70..<90))}
+    let entries : [RadarChartDataEntry]
+    
     var unsaeData = [Unsae]()
-
+    
     
     init(){
+        
         date = "2019.04.17 수요일"
         unsaeMain = "싸움터로 출전하는 장군이 하늘에서 내려 온 신검을 쥐고 장도에 오르니 후퇴할 줄 모르는 강한 일진입니다."
         totalLuck = "약간 부족한 점이 있는 듯 하면서도 생각하기에 따라서는 얼마든지 많은 것을 이루어 나갈 수 있는 날입니다. 모든 것은 자신의 마음먹기에 달린 것입니다. 자신이 마음을 다잡지 못하고 흔들리고 있다면 그것은 결국 자신의 마음에 혼란을 부르는 것입니다. 또한 완벽한 것만을 추구하려고 하지 마십시오. 당신이 현재 보여지는 것만으로도 충분히 완벽할 수 있습니다. 또한 어렵게 생각하지 마시고 평소와 같되 조금 더 자신감 있는 모습으로 세상을 대하려는 태도가 무엇보다 필요합니다."
         
         unsaeScore = Int.random(in: 50..<100)
+        
+        entries = (0..<5).map(block)
         
         for i in 0..<5 {
             let newE = Unsae(unsaeimage: unsaeimage[i], unsaeLuck: unsaeLuck[i])

@@ -56,7 +56,6 @@ class ViewController: UIViewController {
         unsaeViewBindUI()
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         tableViewHeight.constant = unsaeTableView.contentSize.height
         viewInit()
@@ -65,13 +64,14 @@ class ViewController: UIViewController {
     
 
     private func scoreAnimate(){
+        _ = todayUnsae.unsaeScore.subscribe(onNext:{ gaugeValue in
+            self.gaugeView.rate = CGFloat(gaugeValue)
+        })
+        
         _ = todayUnsae.unsaeScore
             .map{"\($0)"}
             .bind(to: unsaeScoreLabel.rx.text)
         
-        _ = todayUnsae.unsaeScore.subscribe(onNext:{ gaugeValue in
-            self.gaugeView.rate = CGFloat(gaugeValue)
-        })
     } // View Animation Part
     
     private func viewInit(){
@@ -122,6 +122,10 @@ class ViewController: UIViewController {
         _ = todayUnsae.unsaeModel
             .map{$0.date}
             .bind(to: dateLabel.rx.text)
+        
+        _ = todayUnsae.unsaeModel.subscribe(onNext:{
+            self.setChartData(entries: $0.entries)
+        })
         
         _ = todayUnsae.thingOfLuckModel
             .map{ thingOfLuckModel -> String in
@@ -226,27 +230,17 @@ extension ViewController : IAxisValueFormatter { // ChartView
         yAxis.axisMinimum = 0
         yAxis.axisMaximum = 90
         yAxis.drawLabelsEnabled = false
-        
-        setChartData()
-        
+ 
     }
     
-    private func setChartData() {
-        let cnt = 5
+    private func setChartData(entries : [RadarChartDataEntry]) {
         
-        let block: (Int) -> RadarChartDataEntry = { _ in return RadarChartDataEntry(value: Double.random(in: 70..<90))}
-        let entries1 = (0..<cnt).map(block)
+        let set = RadarChartDataSet(entries: entries, label: nil)
+        set.drawFilledEnabled = true // 내부 색칠
+        set.fillAlpha = 0.7 // 내부 색칠 알파값
+        set.lineWidth = 1 // 내부 윤곽의 두께
         
-        let set1 = RadarChartDataSet(entries: entries1, label: nil)
-        set1.setColor(UIColor.init(rgb: 0x9CFFFB))
-        set1.fillColor = UIColor.init(rgb: 0x9CFFFB)
-        set1.drawFilledEnabled = true
-        set1.fillAlpha = 0.7
-        set1.lineWidth = 1
-        set1.drawHighlightCircleEnabled = true
-        set1.setDrawHighlightIndicators(false)
-        
-        let data = RadarChartData(dataSets: [set1])
+        let data = RadarChartData(dataSets: [set])
         data.setValueFont(.systemFont(ofSize: 11, weight: .light))
         data.setDrawValues(false)
         
