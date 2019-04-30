@@ -52,7 +52,6 @@
 		E29CF3C4226752C7004ADC18 /* TodayUnsaeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayUnsaeViewModel.swift; sourceTree = "<group>"; };
 		E29CF3C62267538B004ADC18 /* UnsaeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsaeModel.swift; sourceTree = "<group>"; };
 		E29CF3C9226755B0004ADC18 /* ModelCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCreator.swift; sourceTree = "<group>"; };
-		E2FA744722781C30004B68EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +131,6 @@
 				E2EF67EF2264A09300D9B06B /* CustomView */,
 				E26804F122662099001F83F7 /* Extension */,
 				E2EF67F02264A09D00D9B06B /* View */,
-				E2FA744722781C30004B68EB /* MyPlayground.playground */,
 			);
 			path = UIStudy;
 			sourceTree = "<group>";
